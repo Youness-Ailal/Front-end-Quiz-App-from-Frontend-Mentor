@@ -55,7 +55,7 @@ function reducer(state, action) {
     case "nextQuestion":
       return {
         ...state,
-        questionIndex: state.questionIndex++,
+        questionIndex: state.questionIndex + 1,
         userAnswer: null,
         subjects: {
           ...state.subjects,
