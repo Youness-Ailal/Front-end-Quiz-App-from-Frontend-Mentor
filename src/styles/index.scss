@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #f1f4f8;
+  --bg-color-2: #dbe6f0;
+  --text: #1b1e2c;
+  --button-text: #dbe6f0;
+  --border: rgb(27, 30, 44, 0.2);
+  --text-2: #323953;
+  --button-color: #a728f5;
+  --button-shadow: rgb(167, 41, 245, 0.5);
+  --circle: rgb(41, 50, 66, 0.3);
+  --correct: #22c55e;
+  --correct-shadow: rgb(33, 196, 93, 0.8);
+  --incorrect: #ef4444;
+  --incorrect-shadow: rgb(220, 40, 40, 0.4);
+}
+
+[data-theme="dark"] {
+  --bg-color: #313e51;
+  --bg-color-2: #3c4c66;
+  --text: #f5f7fa;
+  --button-text: #dbe6f0;
+  --border: rgb(245, 247, 250, 0.1);
+  --text-2: #abbace;
+  --button-color: #a728f5;
+  --button-shadow: rgb(167, 41, 245, 0.5);
+  --circle: #293242;
+  --correct: #22c55e;
+  --correct-shadow: rgb(33, 196, 93, 0.4);
+  --incorrect: #dc2626;
+  --incorrect-shadow: rgb(220, 40, 40, 0.4);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: clamp(8px, 1vw, 10px);
+}
+
+body {
+  font-family: monospace, sans-serif;
+  line-height: 1.4;
+  background-color: var(--bg-color);
+  color: var(--text);
+}
+button {
+  background-color: var(--button-color);
+  color: var(--text);
+  transition: 0.2s;
+}
+a,
+li,
+button {
+  font-family: inherit;
+  color: inherit;
+}
