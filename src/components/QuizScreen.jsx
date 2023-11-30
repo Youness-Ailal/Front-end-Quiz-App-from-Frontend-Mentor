@@ -2,6 +2,7 @@ import "../styles/Option.scss";
 import { useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 /* eslint-disable react/prop-types */
 const letters = ["A", "B", "C", "D"];
@@ -14,7 +15,11 @@ function QuizScreen({ questions, questionIndex, dispatch, userAnswer }) {
   const points = userAnswer === answer ? 10 : 0;
   const completed = questions.length - 1 === questionIndex ? true : false;
   return (
-    <div className="screen grid grid-cols-2 justify-between">
+    <motion.div
+      initial={{ opacity: 0, x: -10 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4 }}
+      className="screen grid grid-cols-2 justify-between">
       <div className="screen__left flex flex-col gap-8">
         <p className="screen__p questions__count">
           Question {questionIndex + 1} / {questions.length}{" "}
@@ -74,7 +79,7 @@ function QuizScreen({ questions, questionIndex, dispatch, userAnswer }) {
           </button>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import Logo from "./Logo";
+import { motion } from "framer-motion";
 function ResultScreen({ subject, subjects, questions, dispatch }) {
   const points = subjects[subject].points;
   const maxPoints = questions.length * 10;
@@ -13,7 +14,11 @@ function ResultScreen({ subject, subjects, questions, dispatch }) {
   if (score < 20) emoji = "🤦‍♂️";
 
   return (
-    <div className="screen grid grid-cols-2 justify-between ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="screen grid grid-cols-2 justify-between ">
       <div className="screen__left flex flex-col gap-8">
         <p className="screen__p questions__count">Quiz Finished!</p>
         <h1 className="screen__title-2">
@@ -40,7 +45,7 @@ function ResultScreen({ subject, subjects, questions, dispatch }) {
           Play Again
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

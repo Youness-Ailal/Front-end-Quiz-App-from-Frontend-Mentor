@@ -12,11 +12,10 @@ const subjectsIndex = {
   js: 2,
   react: 3,
 };
-
 const initialState = {
   questions: [],
 
-  // "ready" , "active",
+  // "ready" , "active",finish
   status: "ready",
 
   subjects: {
@@ -29,7 +28,7 @@ const initialState = {
   // html,css,js,react
   subject: null,
 
-  questionIndex: 7,
+  questionIndex: 0,
 
   // 0,1,2,3
   userAnswer: null,

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/Header.scss";
 import Logo from "./Logo";
-
+import { motion } from "framer-motion";
 function Header({ subject }) {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   function setDarkMode() {
@@ -23,7 +23,11 @@ function Header({ subject }) {
   }, [theme]);
 
   return (
-    <header className="flex items-center justify-between flex-wrap">
+    <motion.header
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4 }}
+      className="flex items-center justify-between flex-wrap">
       <Logo subject={subject}></Logo>
       <div className=" flex items-center gap-4">
         <svg
@@ -59,7 +63,7 @@ function Header({ subject }) {
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </div>
-    </header>
+    </motion.header>
   );
 }
 
