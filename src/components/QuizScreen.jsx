@@ -4,6 +4,8 @@ import { IoMdCheckmark } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 
+import successSound from "../assets/success.mp3";
+import errorSound from "../assets/error.mp3";
 /* eslint-disable react/prop-types */
 const letters = ["A", "B", "C", "D"];
 
@@ -94,12 +96,20 @@ function Option({
   selectedOpt,
 }) {
   let resultClassName = "";
+  const success = new Audio(successSound);
+  success.volume = 0.2;
+  const error = new Audio(errorSound);
+  error.volume = 0.4;
   if (hasAnswer && id === answer) {
     resultClassName = "correct";
   } else if (hasAnswer && selectedOpt !== answer && id == selectedOpt) {
     resultClassName = "incorrect";
+    error.play();
   } else {
     resultClassName = "";
+  }
+  if (hasAnswer && selectedOpt === answer) {
+    success.play();
   }
   return (
     <>
