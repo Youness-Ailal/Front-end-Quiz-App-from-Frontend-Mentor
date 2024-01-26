@@ -1,4 +1,4 @@
-🌐 Live website : [Link text](https://quiz.ailal.dev)
+🌐 Live website : [https://quiz.ailal.dev](https://quiz.ailal.dev)
 
 ## Your challenge is to build out this quiz app and get it looking as close to the design as possible.
 
